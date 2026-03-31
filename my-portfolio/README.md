@@ -1,16 +1,105 @@
-# React + Vite
+🚀 Portfolio Website (Vite + Tailwind CSS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a personal portfolio website built using Vite and Tailwind CSS. It is designed to showcase your skills, projects, experience, and contact details with a modern UI and smooth user experience.
 
-Currently, two official plugins are available:
+📌 Tech Stack
+⚡ Vite
+🎨 Tailwind CSS
+⚛️ React (JSX Components)
+📧 EmailJS (for contact form)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+📂 Project Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1️⃣ Create & Navigate
+npm create vite@latest my-project
+cd my-project
 
-## Expanding the ESLint configuration
+2️⃣ Install Dependencies
+npm install
+npm install tailwindcss @tailwindcss/vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+⚙️ Tailwind Setup
+
+Update your vite.config.js:
+
+import tailwindcss from '@tailwindcss/vite'
+
+export default {
+  plugins: [tailwindcss()],
+}
+
+Add this in your index.css:
+
+@import "tailwindcss";
+
+
+▶️ Run the Project
+npm run dev
+Visit: http://localhost:5173
+
+🧩 Features
+🎯 Clean and modern UI
+📱 Fully responsive design
+🧑‍💻 Projects showcase
+📜 Resume download option
+📬 Contact form (EmailJS integrated)
+✨ Custom cursor & particle background effects
+📁 Updated Folder Structure
+my-portfolio/
+│── dist/
+│── node_modules/
+│── public/
+│   ├── profile.jpg
+│   └── resume.pdf
+│
+│── src/
+│   ├── assets/
+│   │
+│   ├── components/
+│   │   ├── CustomCursor.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── OverlayMenu.jsx
+│   │   └── ParticlesBackground.jsx
+│   │
+│   ├── sections/
+│   │   ├── About.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Experience.jsx
+│   │   ├── Feedback.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Home.jsx
+│   │   ├── Projects.jsx
+│   │   └── Skills.jsx
+│   │
+│   ├── App.jsx
+│   ├── index.css
+│   ├── main.jsx
+│   └── tailwind.config.js
+│
+│── .env
+│── .gitignore
+│── eslint.config.js
+│── index.html
+│── package-lock.json
+│── package.json
+│── README.md
+│── vite.config.js
+🔐 Environment Variables
+
+Create a .env file and add:
+
+VITE_SERVICE_ID=your_service_id
+VITE_TEMPLATE_ID=your_template_id
+VITE_PUBLIC_KEY=your_public_key
+
+
+📬 Contact
+📧 Email: ravispatel2908.com
+💼 LinkedIn: https://linkedin.com/in/ravibhushansinghh/
+💻 GitHub: https://github.com/ravibs298
+
+⭐ Acknowledgements
+Vite Documentation
+Tailwind CSS Documentation
+EmailJS
