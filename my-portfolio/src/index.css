@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+/* ─── CSS Variables (Theme) ─────────────────────────── */
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #ffffff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+
+  --accent: #14b8a6;
+  --accent-2: #3b82f6;
+
+  --accent-bg: rgba(20, 184, 166, 0.1);
+  --accent-border: rgba(20, 184, 166, 0.4);
+
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  font: 18px/145% system-ui, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 0.18px;
+
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* Responsive font */
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #0f172a;
+    --border: #1e293b;
+    --code-bg: #1e293b;
+
+    --accent: #2dd4bf;
+    --accent-2: #60a5fa;
+  }
+}
+
+/* ─── Base Reset ───────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  cursor: none !important;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  background: var(--bg);   /* ✅ FIXED */
+  color: var(--text);      /* ✅ FIXED */
+  overflow-x: hidden;
+}
+
+/* ─── Layout ───────────────────────────────────────── */
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Typography ───────────────────────────────────── */
+h1, h2 {
+  color: var(--text-h);
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.5px;
+  margin: 32px 0;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+/* ─── Code ─────────────────────────────────────────── */
+code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 14px;
+  padding: 4px 8px;
+  background: var(--code-bg);
+  border-radius: 4px;
+}
+
+/* ─── Scrollbar ────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+}
+
+/* ─── Selection ────────────────────────────────────── */
+::selection {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+/* ─── Gradient Text ────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── Animations ───────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ─── Animation Classes ────────────────────────────── */
+.animate-fadeInUp    { animation: fadeInUp 0.6s ease both; }
+.animate-fadeInLeft  { animation: fadeInLeft 0.6s ease both; }
+.animate-fadeInRight { animation: fadeInRight 0.6s ease both; }
+
+.animate-float     { animation: float 4s ease-in-out infinite; }
+.animate-spin-slow { animation: spinSlow 4s linear infinite; }
+
+/* Delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+/* ─── Reveal Animations ────────────────────────────── */
+.reveal {
+  opacity: 1;
+  transform: none;
+  transition: 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: 0.6s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: 0.6s ease;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── UI Components ───────────────────────────────── */
+.card-glow {
+  transition: 0.3s ease;
+}
+
+.card-glow:hover {
+  box-shadow: 0 8px 30px rgba(20, 184, 166, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Button */
+.btn-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--accent-2),
+    var(--accent)
+  );
+  background-size: 200%;
+  transition: 0.4s ease;
+}
+
+.btn-shimmer:hover {
+  background-position: right;
+  box-shadow: 0 8px 25px rgba(20, 184, 166, 0.35);
+}
+
+/* Divider */
+.section-divider {
+  width: 48px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+  border-radius: 999px;
+}
+
+/* Focus */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Inputs */
+input, textarea {
+  appearance: none;
+}
+section {
+  background-color: #ffffff; /* ← ADD THIS */
+  position: relative;        /* ← ADD THIS */
+  z-index: 1;                /* ← ADD THIS */
+}
