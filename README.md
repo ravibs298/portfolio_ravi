@@ -45,48 +45,8 @@ Visit: http://localhost:5173
 📜 Resume download option
 📬 Contact form (EmailJS integrated)
 ✨ Custom cursor & particle background effects
-📁 Updated Folder Structure
-my-portfolio/
-│── dist/
-│── node_modules/
-│── public/
-│   ├── profile.jpg
-│   └── resume.pdf
-│
-│── src/
-│   ├── assets/
-│   │
-│   ├── components/
-│   │   ├── CustomCursor.jsx
-│   │   ├── Navbar.jsx
-│   │   ├── OverlayMenu.jsx
-│   │   └── ParticlesBackground.jsx
-│   │
-│   ├── sections/
-│   │   ├── About.jsx
-│   │   ├── Contact.jsx
-│   │   ├── Experience.jsx
-│   │   ├── Feedback.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Home.jsx
-│   │   ├── Projects.jsx
-│   │   └── Skills.jsx
-│   │
-│   ├── App.jsx
-│   ├── index.css
-│   ├── main.jsx
-│   └── tailwind.config.js
-│
-│── .env
-│── .gitignore
-│── eslint.config.js
-│── index.html
-│── package-lock.json
-│── package.json
-│── README.md
-│── vite.config.js
-🔐 Environment Variables
 
+🔐 Environment Variables
 Create a .env file and add:
 
 VITE_SERVICE_ID=your_service_id
